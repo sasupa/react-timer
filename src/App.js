@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "./logo.svg";
-import Header from "./Header/Header";
+import Header from "./components/Header/Header";
 import "./App.css";
 
 function App() {
