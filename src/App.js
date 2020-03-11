@@ -8,8 +8,7 @@ function App() {
   return (
   <div>
     <Header />
-    SASUN JA JANIN HASSUTTELU :))
-    <Table />
+    <Timer />
   </div>
 )}
 

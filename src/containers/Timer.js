@@ -41,27 +41,14 @@ class Timer extends Component {
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
     let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
+    let timeOut = hours + ":" +  minutes + ":" + seconds + ":" + centiseconds;
+    
     return (
-      <div className="Stopwatch">
-        <div className="Stopwatch-header">Stopwatch</div>
-        <div className="Stopwatch-display">
-          {hours} : {minutes} : {seconds} : {centiseconds}
-        </div>
-        {this.state.timerOn === false && this.state.timerTime === 0 && (
-          <button onClick={this.startTimer}>Start</button>
-        )}
-        {this.state.timerOn === true && (
-          <button onClick={this.stopTimer}>Stop</button>
-        )}
-        {this.state.timerOn === false && this.state.timerTime > 0 && (
-          <button onClick={this.startTimer}>Resume</button>
-        )}
-        {this.state.timerOn === false && this.state.timerTime > 0 && (
-          <button onClick={this.resetTimer}>Reset</button>
-        )}
-
-        <RenderTable info={this.state} />
-      </div>
+      <RenderTable
+      timerOn={this.state.timerOn}
+      timerTime={timeOut}
+      startTimer={this.startTimer}
+      stopTimer={this.stopTimer}  />
     );
   }
 }

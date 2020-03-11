@@ -12,8 +12,15 @@ const table = (props) => {
                 </tr>
                 <tr>
                     <th>Sisältö 1</th>
-                    <th>Sisältö 2</th>
-                    <th>{props.hourOut}:{props.minOut}:{props.secOut}</th>
+                    <th>
+                    { props.timerOn ?
+                    
+                    <button onClick={props.stopTimer}>STOP</button>
+                        :
+                    <button onClick={props.startTimer}>ALOITA</button>
+                    }
+                    </th>
+                    <th>{props.timerTime}</th>
                 </tr>
             </table>
         </div>
